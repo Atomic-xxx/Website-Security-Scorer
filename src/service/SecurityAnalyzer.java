@@ -13,6 +13,9 @@ public class SecurityAnalyzer {
 
         checks.add(new HttpsCheck());
         checks.add(new DomainCheck());
+        checks.add(new SSLCheck());
+        checks.add(new IPCheck());
+        checks.add(new NetworkCheck());
     }
 
     public ScanResult analyze(String url) {

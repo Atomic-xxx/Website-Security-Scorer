@@ -1,23 +1,13 @@
-import checks.*;
-import java.util.*;
+import service.SecurityAnalyzer;
 
 public class Main {
     public static void main(String[] args) {
 
         String url = "https://google.com";
 
-        List<SecurityCheck> checks = new ArrayList<>();
+        SecurityAnalyzer analyzer = new SecurityAnalyzer();
 
-        checks.add(new HttpsCheck());
-        checks.add(new DomainCheck());
-
-        int totalScore = 0;
-
-        for (SecurityCheck check : checks) {
-            int score = check.performCheck(url);
-            System.out.println(check.getCheckName() + ": " + score);
-            totalScore += score;
-        }
+        int totalScore = analyzer.analyze(url);
 
         System.out.println("Total Score: " + totalScore);
     }

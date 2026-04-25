@@ -1,6 +1,7 @@
 package service;
 
 import checks.*;
+import model.ScanResult;
 import java.util.*;
 
 public class SecurityAnalyzer {
@@ -14,16 +15,18 @@ public class SecurityAnalyzer {
         checks.add(new DomainCheck());
     }
 
-    public int analyze(String url) {
+    public ScanResult analyze(String url) {
 
         int totalScore = 0;
+        Map<String, Integer> breakdown = new HashMap<>();
 
         for (SecurityCheck check : checks) {
             int score = check.performCheck(url);
+            breakdown.put(check.getCheckName(), score);
             System.out.println(check.getCheckName() + ": " + score);
             totalScore += score;
         }
 
-        return totalScore;
+        return new ScanResult(url, totalScore, breakdown);
     }
 }

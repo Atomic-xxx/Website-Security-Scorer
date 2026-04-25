@@ -1,4 +1,5 @@
 import service.SecurityAnalyzer;
+import model.ScanResult;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,8 +8,8 @@ public class Main {
 
         SecurityAnalyzer analyzer = new SecurityAnalyzer();
 
-        int totalScore = analyzer.analyze(url);
+        ScanResult result = analyzer.analyze(url);
 
-        System.out.println("Total Score: " + totalScore);
+        System.out.println("Total Score: " + result.getTotalScore());
     }
 }

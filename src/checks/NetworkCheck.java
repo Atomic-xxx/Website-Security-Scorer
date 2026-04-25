@@ -9,7 +9,7 @@ public class NetworkCheck implements SecurityCheck {
         try {
             InetAddress ip = InetAddress.getByName(new java.net.URL(url).getHost());
             if (ip.isReachable(2000)) {
-                return 10;
+                return 20;
             }
         } catch (Exception e) {}
 

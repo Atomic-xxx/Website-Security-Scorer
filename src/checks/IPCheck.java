@@ -8,7 +8,7 @@ public class IPCheck implements SecurityCheck {
     public int performCheck(String url) {
         try {
             InetAddress ip = InetAddress.getByName(new java.net.URL(url).getHost());
-            return 10;
+            return 15;
         } catch (Exception e) {
             return 0;
         }

@@ -1,15 +1,24 @@
-import checks.HttpsCheck;
+import checks.*;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 
         String url = "https://google.com";
 
-        HttpsCheck check = new HttpsCheck();
+        List<SecurityCheck> checks = new ArrayList<>();
 
-        int score = check.performCheck(url);
+        checks.add(new HttpsCheck());
+        checks.add(new DomainCheck());
 
-        System.out.println("Check: " + check.getCheckName());
-        System.out.println("Score: " + score);
+        int totalScore = 0;
+
+        for (SecurityCheck check : checks) {
+            int score = check.performCheck(url);
+            System.out.println(check.getCheckName() + ": " + score);
+            totalScore += score;
+        }
+
+        System.out.println("Total Score: " + totalScore);
     }
 }

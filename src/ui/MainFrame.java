@@ -1,6 +1,7 @@
 package ui;
 
 import javax.swing.*;
+import javax.swing.border.*;
 import java.awt.*;
 
 import service.SecurityAnalyzer;
@@ -23,9 +24,13 @@ public class MainFrame extends JFrame {
         progressBar = new JProgressBar(0, 100);
         progressBar.setValue(0);
         progressBar.setStringPainted(true);
+        JPanel panel = new JPanel();
+        panel.setLayout(null);
+        panel.setBackground(new Color(30, 35, 45));
 
 
         // Top
+        setTitle("Website Security Scorer");
         JPanel top = new JPanel();
         urlField = new JTextField(25);
         JButton scanBtn = new JButton("Scan");
@@ -55,6 +60,7 @@ public class MainFrame extends JFrame {
         add(top, BorderLayout.NORTH);
         add(new JScrollPane(resultArea), BorderLayout.CENTER);
         add(bottom, BorderLayout.SOUTH);
+        add(panel);
 
         // Actions
         scanBtn.addActionListener(e -> scan());

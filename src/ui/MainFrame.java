@@ -12,6 +12,7 @@ public class MainFrame extends JFrame {
     private JTextField urlField;
     private JTextArea resultArea;
     private JLabel scoreLabel;
+    private JProgressBar progressBar;
 
     public MainFrame() {
 
@@ -19,6 +20,10 @@ public class MainFrame extends JFrame {
         setSize(500, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        progressBar = new JProgressBar(0, 100);
+        progressBar.setValue(0);
+        progressBar.setStringPainted(true);
+
 
         // Top
         JPanel top = new JPanel();
@@ -38,9 +43,17 @@ public class MainFrame extends JFrame {
         // Bottom
         scoreLabel = new JLabel("Total Score: 0");
 
+        progressBar = new JProgressBar(0, 100);
+        progressBar.setValue(0);
+        progressBar.setStringPainted(true);
+
+        JPanel bottom = new JPanel(new GridLayout(2, 1));
+        bottom.add(scoreLabel);
+        bottom.add(progressBar);
+
         add(top, BorderLayout.NORTH);
         add(new JScrollPane(resultArea), BorderLayout.CENTER);
-        add(scoreLabel, BorderLayout.SOUTH);
+        add(bottom, BorderLayout.SOUTH);
 
         // Actions
         scanBtn.addActionListener(e -> scan());
@@ -64,6 +77,7 @@ public class MainFrame extends JFrame {
 
         resultArea.setText(output.toString());
         scoreLabel.setText("Total Score: " + result.getTotalScore());
+        progressBar.setValue(result.getTotalScore());
     }
 
     private void save() {

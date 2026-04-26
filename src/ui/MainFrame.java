@@ -122,7 +122,9 @@ public class MainFrame extends JFrame {
         resultArea.setText("SCAN RESULTS:\n\n" + output.toString());
         int score = result.getTotalScore();
         scoreLabel.setText("TOTAL SCORE: " + score);
-        int width = (score * 500) / 100; // 500 = total width
+
+        int safeScore = Math.min(score, 100);
+        int width = (safeScore * 500) / 100;
 
         progressFill.setBounds(0, 0, width, 25);
 
@@ -133,6 +135,9 @@ public class MainFrame extends JFrame {
         } else {
             progressFill.setBackground(Color.RED);
         }
+
+        progressFill.revalidate();
+        progressFill.repaint();
     catch (Exception e) {
     JOptionPane.showMessageDialog(this, "Invalid URL or error occurred");
    }

@@ -17,6 +17,11 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
 
+        setTitle("Website Security Scorer");
+        setSize(900, 650);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
         JPanel panel = new JPanel();
         panel.setLayout(null);
         panel.setBackground(new Color(30, 35, 45));

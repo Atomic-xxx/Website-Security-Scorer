@@ -60,8 +60,8 @@ public class MainFrame extends JFrame {
         scanBtn.addActionListener(e -> scan());
         saveBtn.addActionListener(e -> save());
     }
-    try{
     private void scan() {
+        try{
         String url = urlField.getText().trim();
         String url = urlField.getText().trim();
 
@@ -86,6 +86,11 @@ public class MainFrame extends JFrame {
         scoreLabel.setText("Total Score: " + result.getTotalScore());
         progressBar.setValue(result.getTotalScore());
     }
+    catch (Exception e) {
+    JOptionPane.showMessageDialog(this, "Invalid URL or error occurred");
+   }
+    }
+
 
     private void save() {
         String url = urlField.getText().trim();
@@ -98,8 +103,4 @@ public class MainFrame extends JFrame {
 
         JOptionPane.showMessageDialog(this, "Saved to database!");
     }
-    }
-    catch (Exception e) {
-    JOptionPane.showMessageDialog(this, "Invalid URL or error occurred");
-   }
 }

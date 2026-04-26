@@ -40,6 +40,9 @@ public class MainFrame extends JFrame {
         subtitle.setFont(new Font("Segoe UI", Font.PLAIN, 15));
         panel.add(subtitle);
 
+        title.setHorizontalAlignment(SwingConstants.CENTER);
+        subtitle.setHorizontalAlignment(SwingConstants.CENTER);
+
         // URL Label
         JLabel urlLabel = new JLabel("Enter URL:");
         urlLabel.setBounds(200, 120, 100, 25);
@@ -80,6 +83,7 @@ public class MainFrame extends JFrame {
         progressBar.setBounds(200, 470, 500, 25);
         progressBar.setStringPainted(true);
         panel.add(progressBar);
+        progressBar.setUI(new javax.swing.plaf.basic.BasicProgressBarUI());
 
         // Add panel to frame
         add(panel);
@@ -115,11 +119,11 @@ public class MainFrame extends JFrame {
         progressBar.setValue(score);
 
         if (score >= 80) {
-            scoreLabel.setForeground(Color.GREEN);
+            progressBar.setForeground(Color.GREEN);
         } else if (score >= 50) {
-            scoreLabel.setForeground(Color.ORANGE);
+            progressBar.setForeground(Color.ORANGE);
         } else {
-            scoreLabel.setForeground(Color.RED);
+            progressBar.setForeground(Color.RED);
         }
     }
     catch (Exception e) {

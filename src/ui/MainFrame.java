@@ -31,6 +31,11 @@ public class MainFrame extends JFrame {
         title.setForeground(Color.WHITE);
         title.setFont(new Font("Segoe UI", Font.BOLD, 30));
         panel.add(title);
+        JLabel subtitle = new JLabel("Check if a website looks secure and trustworthy");
+        subtitle.setBounds(245, 65, 450, 25);
+        subtitle.setForeground(new Color(190,190,190));
+        subtitle.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+        panel.add(subtitle);
 
 
         // Top
@@ -61,8 +66,8 @@ public class MainFrame extends JFrame {
         bottom.add(scoreLabel);
         bottom.add(progressBar);
 
-        add(top, BorderLayout.NORTH);
-        add(new JScrollPane(resultArea), BorderLayout.CENTER);
+       // add(top, BorderLayout.NORTH);
+        //add(new JScrollPane(resultArea), BorderLayout.CENTER);
         add(bottom, BorderLayout.SOUTH);
         add(panel);
 

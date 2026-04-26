@@ -11,5 +11,8 @@ public class Main {
         ScanResult result = analyzer.analyze(url);
 
         System.out.println("Total Score: " + result.getTotalScore());
+        
+         ResultDAO dao = new ResultDAO();
+         dao.saveResult(result);
     }
 }

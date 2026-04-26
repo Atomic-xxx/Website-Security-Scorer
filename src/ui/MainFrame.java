@@ -17,58 +17,64 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
 
-        setSize(900, 650);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        progressBar = new JProgressBar(0, 100);
-        progressBar.setValue(0);
-        progressBar.setStringPainted(true);
         JPanel panel = new JPanel();
         panel.setLayout(null);
         panel.setBackground(new Color(30, 35, 45));
+
+        // Title
         JLabel title = new JLabel("Website Security Scorer");
         title.setBounds(250, 25, 500, 40);
         title.setForeground(Color.WHITE);
         title.setFont(new Font("Segoe UI", Font.BOLD, 30));
         panel.add(title);
+
+        // Subtitle
         JLabel subtitle = new JLabel("Check if a website looks secure and trustworthy");
         subtitle.setBounds(245, 65, 450, 25);
         subtitle.setForeground(new Color(190,190,190));
         subtitle.setFont(new Font("Segoe UI", Font.PLAIN, 15));
         panel.add(subtitle);
 
+        // URL Label
+        JLabel urlLabel = new JLabel("Enter URL:");
+        urlLabel.setBounds(200, 120, 100, 25);
+        urlLabel.setForeground(Color.WHITE);
+        panel.add(urlLabel);
 
-        // Top
-        setTitle("Website Security Scorer");
-        JPanel top = new JPanel();
-        urlField = new JTextField(25);
+        // URL Field
+        urlField = new JTextField();
+        urlField.setBounds(300, 120, 250, 25);
+        panel.add(urlField);
+
+        // Buttons
         JButton scanBtn = new JButton("Scan");
+        scanBtn.setBounds(570, 120, 80, 25);
+        panel.add(scanBtn);
+
         JButton saveBtn = new JButton("Save");
+        saveBtn.setBounds(660, 120, 80, 25);
+        panel.add(saveBtn);
 
-        top.add(new JLabel("Enter URL:"));
-        top.add(urlField);
-        top.add(scanBtn);
-        top.add(saveBtn);
-
-        // Center
-        
+        // Result Area
         resultArea = new JTextArea();
         resultArea.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(resultArea);
+        scrollPane.setBounds(200, 170, 500, 250);
+        panel.add(scrollPane);
 
-        // Bottom
+        // Score Label
         scoreLabel = new JLabel("Total Score: 0");
+        scoreLabel.setBounds(200, 440, 200, 25);
+        scoreLabel.setForeground(Color.WHITE);
+        panel.add(scoreLabel);
 
+        // Progress Bar
         progressBar = new JProgressBar(0, 100);
-        progressBar.setValue(0);
+        progressBar.setBounds(200, 470, 500, 25);
         progressBar.setStringPainted(true);
+        panel.add(progressBar);
 
-        JPanel bottom = new JPanel(new GridLayout(2, 1));
-        bottom.add(scoreLabel);
-        bottom.add(progressBar);
-
-       // add(top, BorderLayout.NORTH);
-        //add(new JScrollPane(resultArea), BorderLayout.CENTER);
-        //add(bottom, BorderLayout.SOUTH);
+        // Add panel to frame
         add(panel);
 
         // Actions

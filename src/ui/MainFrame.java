@@ -131,7 +131,7 @@ public class MainFrame extends JFrame {
         if (score >= 80) {
             progressFill.setBackground(Color.GREEN);
         } else if (score >= 50) {
-            progressFill.setBackground(new Color(255, 140, 0));
+            progressFill.setBackground(new Color(255, 100, 0));
         } else {
             progressFill.setBackground(Color.RED);
         }

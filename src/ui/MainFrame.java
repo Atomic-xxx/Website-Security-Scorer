@@ -82,8 +82,8 @@ public class MainFrame extends JFrame {
         progressBar = new JProgressBar(0, 100);
         progressBar.setBounds(200, 470, 500, 25);
         progressBar.setStringPainted(true);
-        panel.add(progressBar);
         progressBar.setUI(new javax.swing.plaf.basic.BasicProgressBarUI());
+        panel.add(progressBar);
 
         // Add panel to frame
         add(panel);

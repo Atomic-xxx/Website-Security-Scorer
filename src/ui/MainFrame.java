@@ -37,6 +37,7 @@ public class MainFrame extends JFrame {
         top.add(saveBtn);
 
         // Center
+        
         resultArea = new JTextArea();
         resultArea.setEditable(false);
 
@@ -59,9 +60,15 @@ public class MainFrame extends JFrame {
         scanBtn.addActionListener(e -> scan());
         saveBtn.addActionListener(e -> save());
     }
-
+    try{
     private void scan() {
         String url = urlField.getText().trim();
+        String url = urlField.getText().trim();
+
+        if (url.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter a URL");
+            return;
+        }
 
         SecurityAnalyzer analyzer = new SecurityAnalyzer();
         ScanResult result = analyzer.analyze(url);
@@ -75,7 +82,7 @@ public class MainFrame extends JFrame {
                   .append("\n");
         }
 
-        resultArea.setText(output.toString());
+        resultArea.setText("Scan Results:\n\n" + output.toString());
         scoreLabel.setText("Total Score: " + result.getTotalScore());
         progressBar.setValue(result.getTotalScore());
     }
@@ -91,4 +98,8 @@ public class MainFrame extends JFrame {
 
         JOptionPane.showMessageDialog(this, "Saved to database!");
     }
+    }
+    catch (Exception e) {
+    JOptionPane.showMessageDialog(this, "Invalid URL or error occurred");
+   }
 }

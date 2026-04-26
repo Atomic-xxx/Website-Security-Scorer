@@ -51,7 +51,7 @@ public class MainFrame extends JFrame {
 
         // URL Field
         urlField = new JTextField();
-        urlField.setBounds(300, 120, 350, 25);
+        urlField.setBounds(300, 120, 300, 25);
         panel.add(urlField);
 
         // Buttons

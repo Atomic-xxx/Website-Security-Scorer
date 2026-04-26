@@ -51,16 +51,16 @@ public class MainFrame extends JFrame {
 
         // URL Field
         urlField = new JTextField();
-        urlField.setBounds(300, 120, 250, 25);
+        urlField.setBounds(300, 120, 350, 25);
         panel.add(urlField);
 
         // Buttons
         JButton scanBtn = new JButton("Scan");
-        scanBtn.setBounds(570, 120, 80, 25);
+        scanBtn.setBounds(610, 120, 90, 25);
         panel.add(scanBtn);
 
         JButton saveBtn = new JButton("Save");
-        saveBtn.setBounds(660, 120, 80, 25);
+        saveBtn.setBounds(400, 510, 100, 30);
         panel.add(saveBtn);
 
         // Result Area
@@ -73,7 +73,7 @@ public class MainFrame extends JFrame {
 
         // Score Label
         scoreLabel = new JLabel("Total Score: 0");
-        scoreLabel.setBounds(200, 440, 200, 25);
+        scoreLabel.setBounds(200, 440, 300, 25);
         scoreLabel.setFont(new Font("Segoe UI", Font.BOLD, 18));
         scoreLabel.setForeground(Color.WHITE);
         panel.add(scoreLabel);
@@ -81,7 +81,7 @@ public class MainFrame extends JFrame {
         // Progress Bar
         JPanel progressContainer = new JPanel();
         progressContainer.setBounds(200, 470, 500, 25);
-        progressContainer.setBackground(Color.DARK_GRAY);
+        progressContainer.setBackground(Color.BLACK);
         progressContainer.setLayout(null);
 
         progressFill = new JPanel();

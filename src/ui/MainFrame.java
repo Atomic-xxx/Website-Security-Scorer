@@ -63,7 +63,6 @@ public class MainFrame extends JFrame {
     private void scan() {
         try{
         String url = urlField.getText().trim();
-        String url = urlField.getText().trim();
 
         if (url.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please enter a URL");

@@ -143,7 +143,7 @@ public class MainFrame extends JFrame {
     JOptionPane.showMessageDialog(this, "Invalid URL or error occurred");
    }
     
-
+    }
 
     private void save() {
         String url = urlField.getText().trim();

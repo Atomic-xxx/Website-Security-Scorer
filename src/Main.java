@@ -1,5 +1,6 @@
 import service.SecurityAnalyzer;
 import model.ScanResult;
+import database.ResultDAO;
 
 public class Main {
     public static void main(String[] args) {

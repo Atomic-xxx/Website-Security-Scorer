@@ -138,10 +138,11 @@ public class MainFrame extends JFrame {
 
         progressFill.revalidate();
         progressFill.repaint();
+        }
     catch (Exception e) {
     JOptionPane.showMessageDialog(this, "Invalid URL or error occurred");
    }
-    }
+    
 
 
     private void save() {

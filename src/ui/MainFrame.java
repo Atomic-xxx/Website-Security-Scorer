@@ -62,6 +62,7 @@ public class MainFrame extends JFrame {
 
         // Result Area
         resultArea = new JTextArea();
+        resultArea.setFont(new Font("Segoe UI", Font.BOLD, 14));
         resultArea.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(resultArea);
         scrollPane.setBounds(200, 170, 500, 250);
@@ -70,6 +71,7 @@ public class MainFrame extends JFrame {
         // Score Label
         scoreLabel = new JLabel("Total Score: 0");
         scoreLabel.setBounds(200, 440, 200, 25);
+        scoreLabel.setFont(new Font("Segoe UI", Font.BOLD, 18));
         scoreLabel.setForeground(Color.WHITE);
         panel.add(scoreLabel);
 
@@ -107,9 +109,18 @@ public class MainFrame extends JFrame {
                   .append("\n");
         }
 
-        resultArea.setText("Scan Results:\n\n" + output.toString());
-        scoreLabel.setText("Total Score: " + result.getTotalScore());
-        progressBar.setValue(result.getTotalScore());
+        resultArea.setText("SCAN RESULTS:\n\n" + output.toString());
+        int score = result.getTotalScore();
+        scoreLabel.setText("TOTAL SCORE: " + score);
+        progressBar.setValue(score);
+
+        if (score >= 80) {
+            scoreLabel.setForeground(Color.GREEN);
+        } else if (score >= 50) {
+            scoreLabel.setForeground(Color.ORANGE);
+        } else {
+            scoreLabel.setForeground(Color.RED);
+        }
     }
     catch (Exception e) {
     JOptionPane.showMessageDialog(this, "Invalid URL or error occurred");

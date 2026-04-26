@@ -68,7 +68,7 @@ public class MainFrame extends JFrame {
 
        // add(top, BorderLayout.NORTH);
         //add(new JScrollPane(resultArea), BorderLayout.CENTER);
-        add(bottom, BorderLayout.SOUTH);
+        //add(bottom, BorderLayout.SOUTH);
         add(panel);
 
         // Actions

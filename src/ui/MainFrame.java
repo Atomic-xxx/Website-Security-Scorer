@@ -28,7 +28,7 @@ public class MainFrame extends JFrame {
 
         // Title
         JLabel title = new JLabel("Website Security Scorer");
-        title.setBounds(250, 25, 500, 40);
+        title.setBounds(200, 25, 500, 40);
         title.setForeground(Color.WHITE);
         title.setFont(new Font("Segoe UI", Font.BOLD, 30));
         panel.add(title);

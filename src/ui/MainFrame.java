@@ -13,7 +13,7 @@ public class MainFrame extends JFrame {
     private JTextField urlField;
     private JTextArea resultArea;
     private JLabel scoreLabel;
-    private JProgressBar progressBar;
+    private JPanel progressFill;
 
     public MainFrame() {
 
@@ -79,11 +79,17 @@ public class MainFrame extends JFrame {
         panel.add(scoreLabel);
 
         // Progress Bar
-        progressBar = new JProgressBar(0, 100);
-        progressBar.setBounds(200, 470, 500, 25);
-        progressBar.setStringPainted(true);
-        progressBar.setUI(new javax.swing.plaf.basic.BasicProgressBarUI());
-        panel.add(progressBar);
+        JPanel progressContainer = new JPanel();
+        progressContainer.setBounds(200, 470, 500, 25);
+        progressContainer.setBackground(Color.DARK_GRAY);
+        progressContainer.setLayout(null);
+
+        progressFill = new JPanel();
+        progressFill.setBounds(0, 0, 0, 25); // initially empty
+        progressFill.setBackground(Color.GREEN);
+
+        progressContainer.add(progressFill);
+        panel.add(progressContainer);
 
         // Add panel to frame
         add(panel);
@@ -116,18 +122,17 @@ public class MainFrame extends JFrame {
         resultArea.setText("SCAN RESULTS:\n\n" + output.toString());
         int score = result.getTotalScore();
         scoreLabel.setText("TOTAL SCORE: " + score);
-        progressBar.setValue(score);
+        int width = (score * 500) / 100; // 500 = total width
+
+        progressFill.setBounds(0, 0, width, 25);
 
         if (score >= 80) {
-            progressBar.setForeground(Color.GREEN);
+            progressFill.setBackground(Color.GREEN);
         } else if (score >= 50) {
-            progressBar.setForeground(Color.ORANGE);
+            progressFill.setBackground(Color.ORANGE);
         } else {
-            progressBar.setForeground(Color.RED);
+            progressFill.setBackground(Color.RED);
         }
-
-        progressBar.setBackground(Color.DARK_GRAY);
-    }
     catch (Exception e) {
     JOptionPane.showMessageDialog(this, "Invalid URL or error occurred");
    }

@@ -35,7 +35,7 @@ public class MainFrame extends JFrame {
 
         // Subtitle
         JLabel subtitle = new JLabel("Check if a website looks secure and trustworthy");
-        subtitle.setBounds(245, 65, 450, 25);
+        subtitle.setBounds(200,65, 500, 25);
         subtitle.setForeground(new Color(190,190,190));
         subtitle.setFont(new Font("Segoe UI", Font.PLAIN, 15));
         panel.add(subtitle);

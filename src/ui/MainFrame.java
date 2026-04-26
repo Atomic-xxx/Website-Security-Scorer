@@ -125,6 +125,8 @@ public class MainFrame extends JFrame {
         } else {
             progressBar.setForeground(Color.RED);
         }
+
+        progressBar.setBackground(Color.DARK_GRAY);
     }
     catch (Exception e) {
     JOptionPane.showMessageDialog(this, "Invalid URL or error occurred");

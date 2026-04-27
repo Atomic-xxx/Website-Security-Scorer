@@ -121,7 +121,7 @@ public class MainFrame extends JFrame {
 
         resultArea.setText("SCAN RESULTS:\n\n" + output.toString());
         int score = result.getTotalScore();
-        scoreLabel.setText("TOTAL SCORE: " + score);
+        scoreLabel.setText("Total Score: " + score);
 
         int safeScore = Math.min(score, 100);
         int width = (safeScore * 500) / 100;

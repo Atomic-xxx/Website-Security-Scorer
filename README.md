@@ -77,7 +77,7 @@ src/
  ┗ Main.java  (MAIN)
 
 lib/
- ┗ mysql-connector-j-9.6.0.jar (local only) 
+ ┗ mysql-connector-j-9.6.0.jar ( driver local only) 
 
 sql/
  ┗ schema.sql

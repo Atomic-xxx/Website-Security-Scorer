@@ -61,7 +61,7 @@ src/
  ┣ model/
  ┃ ┗ ScanResult.java
  ┣ checks/
- ┃ ┣ SecurityCheck.java
+ ┃ ┣ SecurityCheck.java (ITERFACE)
  ┃ ┣ HttpsCheck.java
  ┃ ┣ SSLCheck.java
  ┃ ┣ DomainCheck.java
@@ -70,14 +70,14 @@ src/
  ┣ service/
  ┃ ┗ SecurityAnalyzer.java
  ┣ database/
- ┃ ┣ DatabaseManager.java
- ┃ ┗ ResultDAO.java
+ ┃ ┣ DatabaseManager.java (CONNECTION ESTABLISH)
+ ┃ ┗ ResultDAO.java  (UPDATE TO DATABASE)
  ┣ ui/
- ┃ ┗ MainFrame.java
- ┗ Main.java
+ ┃ ┗ MainFrame.java (UI)
+ ┗ Main.java  (MAIN)
 
 lib/
- ┗ mysql-connector-j-9.6.0.jar (local only)
+ ┗ mysql-connector-j-9.6.0.jar (local only) 
 
 sql/
  ┗ schema.sql
